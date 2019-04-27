@@ -25,7 +25,7 @@ g++ *.cpp -o pacman.exe
 
 ## Authors
 
-* **Uroš Nešić** - *Developer* - [unesic](https://github.com/unesic
+* **Uroš Nešić** - *Developer* - [unesic](https://github.com/unesic)
 
 ## License
 
