@@ -1,4 +1,4 @@
-# Project Title
+# C++ Pacman
 
 Simplified version of pacman made in C++ using TXT files as backend for levels and game logic. Built entirely using VS Code as text editor and MinGW as the compiler.
 
