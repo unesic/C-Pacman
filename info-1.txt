@@ -1,0 +1,31 @@
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%@
+^                                                         ^
+^                     UPUTSTVO O IGRI                     ^
+^  !%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%@  ^
+^  ^                                                   ^  ^
+^  ^   > Cilj igre je sakupiti sto vise poena za       ^  ^
+^  ^     dva minuta.                                   ^  ^
+^  ^   > Igrac se krece po uz pomoc strelica:          ^  ^
+^  ^        (GORE, DOLE, LEVO, DESNO)                  ^  ^
+^  ^                                                   ^  ^
+^  #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$  ^
+^                                                         ^
+^                  KAKO IGRA FUNKCIONISE                  ^
+^  !%%% GLAVNI EKRANI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%@  ^
+^  ^                                                   ^  ^
+^  ^   > Po pokretanju programa inicijalizuju se 3     ^  ^
+^  ^     glavna "ekrana" i to su:                      ^  ^
+^  ^       >> Pocetni ekran nakon pokretanja gde       ^  ^
+^  ^          korisnik bira dalji tok programa.        ^  ^
+^  ^       >> Fajl u kome se nalaze sve potrebne       ^  ^
+^  ^          informacije i instrukcije o tome kako    ^  ^
+^  ^          se igra i kako program funkcionise.      ^  ^
+^  ^       >> Izlazni ekran u gde se trazi potvrda     ^  ^
+^  ^          igraca da napusti program.               ^  ^
+^  ^                                                   ^  ^
+^  #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$  ^
+^                                                         ^
+^  1> SLEDECA STRANA                                      ^
+^  2> POVRATAK                                            ^
+^                                             STRANA 1/2  ^
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$

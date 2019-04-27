@@ -1,0 +1,31 @@
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%@
+^                                                         ^
+^  !%%% SPOREDNI EKRANI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%@  ^
+^  ^                                                   ^  ^
+^  ^   > Kao i 5 sporednih (pomocnih):                 ^  ^
+^  ^       >> Originalni fajl u kome se nalazi mapa    ^  ^
+^  ^          ciji se sadrzaj po pokretanju igre       ^  ^
+^  ^          upisuje u novi ...                       ^  ^
+^  ^           >>> ... fajl u kome se kasnije od-      ^  ^
+^  ^               vija sama igra tako sto se u        ^  ^
+^  ^               svakoj iteraciji sadrzaj isci-      ^  ^
+^  ^               tava, analizuje i, u zavisnosti     ^  ^
+^  ^               od interakcije igraca, menja, i     ^  ^
+^  ^               na kraju, iscrtava.                 ^  ^
+^  ^       >> Ekran koji se pojavljuje po zavrsetku    ^  ^
+^  ^          igre obavestava igraca o ostvarnom       ^  ^
+^  ^          broju poena i za koje vreme              ^  ^
+^  ^       >> Sledeci ekran zahteva od korisnika       ^  ^
+^  ^          dalje instrukcije - zapoceti novu        ^  ^
+^  ^          igru, videti informacije o programu      ^  ^
+^  ^          ili izaci iz programa.                   ^  ^
+^  ^                                                   ^  ^
+^  #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$  ^
+^                                                         ^
+^                                                         ^
+^                                                         ^
+^                                                         ^
+^  1> PRETHODNA STRANA                                    ^
+^  2> POVRATAK                                            ^
+^                                             STRANA 2/2  ^
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$
