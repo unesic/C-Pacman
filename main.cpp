@@ -36,7 +36,7 @@ struct screen
 	ifstream fileR;
 	ofstream fileW;
 	COORD crd;
-} SCREEN_HOME, SCREEN_GAME, SCREEN_INFO[2], SCREEN_EXIT, SCREEN_POST;
+} screen_home, screen_game, SCREEN_INFO[2], SCREEN_EXIT, SCREEN_POST;
 
 ifstream OG_GAME_MAP;
 
@@ -109,44 +109,44 @@ void setup()
 	last_key_pressed = new unsigned short int[2];
 
 	// Inicijalizacija strukture pocetnog ekrana
-	SCREEN_HOME.path = "./home.txt";
-	SCREEN_HOME.crd.X = 0;
-	SCREEN_HOME.crd.Y = 2;
+	screen_home.path = "./home.txt";
+	screen_home.crd.X = 0;
+	screen_home.crd.Y = 2;
 
 	// Inicijalizacija ekrana sa uputstvima i informacijama
 	SCREEN_INFO[0].path = "./info-1.txt";
-	SCREEN_HOME.crd.X = 0;
-	SCREEN_HOME.crd.Y = 2;
+	screen_home.crd.X = 0;
+	screen_home.crd.Y = 2;
 	SCREEN_INFO[1].path = "./info-2.txt";
-	SCREEN_HOME.crd.X = 0;
-	SCREEN_HOME.crd.Y = 2;
+	screen_home.crd.X = 0;
+	screen_home.crd.Y = 2;
 
 	// Inicijalizacija ekrana koji se pojavljuje nakon igre
 	SCREEN_POST.path = "./post-game.txt";
-	SCREEN_HOME.crd.X = 0;
-	SCREEN_HOME.crd.Y = 2;
+	screen_home.crd.X = 0;
+	screen_home.crd.Y = 2;
 
 	// Inicijalizacija ekrana izlaza iz igre
 	SCREEN_EXIT.path = "./exit.txt";
-	SCREEN_HOME.crd.X = 0;
-	SCREEN_HOME.crd.Y = 2;
+	screen_home.crd.X = 0;
+	screen_home.crd.Y = 2;
 
 	// Otvaranje originalnog fajla mape
 	OG_GAME_MAP = openR("./level.txt");
 
 	// Inicijalizacija strukture igre
-	SCREEN_GAME.path = "./game.txt";
-	SCREEN_GAME.fileW = openW(SCREEN_GAME.path);
-	SCREEN_HOME.crd.X = 0;
-	SCREEN_HOME.crd.Y = 2;
+	screen_game.path = "./game.txt";
+	screen_game.fileW = openW(screen_game.path);
+	screen_home.crd.X = 0;
+	screen_home.crd.Y = 2;
 
 	// Upisivanje sadrzaja originalne mape u mapu igre
 	string line((istreambuf_iterator<char>(OG_GAME_MAP)), istreambuf_iterator<char>());
-	SCREEN_GAME.fileW << line;
+	screen_game.fileW << line;
 
 	// Zatvaranje otvorenih fajlova
 	OG_GAME_MAP.close();
-	SCREEN_GAME.fileW.close();
+	screen_game.fileW.close();
 }
 #pragma endregion
 
@@ -157,9 +157,9 @@ void updateMap()
 	// Otvaranje fajla ekrana mape u modu za citanje,
 	// upisivanje njegov sadrzaja u string 'line' i
 	// zatvaranje fajla ekrana mape
-	SCREEN_GAME.fileR = openR(SCREEN_GAME.path);
-	string line((istreambuf_iterator<char>(SCREEN_GAME.fileR)), istreambuf_iterator<char>());
-	SCREEN_GAME.fileR.close();
+	screen_game.fileR = openR(screen_game.path);
+	string line((istreambuf_iterator<char>(screen_game.fileR)), istreambuf_iterator<char>());
+	screen_game.fileR.close();
 
 	// Portali na levoj i desnoj strani mape
 	if (curr_player_pos == 841)
@@ -179,9 +179,9 @@ void updateMap()
 
 	// Otvaranje fajla igre u modu za pisanje, upisivanje
 	// sadrzaja stringa 'line' u njega i zatvaranje
-	SCREEN_GAME.fileW = openW(SCREEN_GAME.path);
-	SCREEN_GAME.fileW << line;
-	SCREEN_GAME.fileW.close();
+	screen_game.fileW = openW(screen_game.path);
+	screen_game.fileW << line;
+	screen_game.fileW.close();
 }
 
 // Funkcija za azuriranje igraca
@@ -194,11 +194,11 @@ void updatePlayer()
 	{
 		switch (last_key_pressed[1])
 		{
-		case KEY_UP:
+		case ARR_UP:
 			moveUP();
 			break;
 
-		case KEY_DOWN:
+		case ARR_DOWN:
 			moveDOWN();
 			break;
 
@@ -206,7 +206,7 @@ void updatePlayer()
 			moveLEFT();
 			break;
 
-		case KEY_RIGHT:
+		case ARR_RIGHT:
 			moveRIGHT();
 			break;
 		}
@@ -216,11 +216,11 @@ void updatePlayer()
 	{
 		switch (last_key_pressed[1])
 		{
-		case KEY_UP:
+		case ARR_UP:
 			moveUP();
 			break;
 
-		case KEY_DOWN:
+		case ARR_DOWN:
 			moveDOWN();
 			break;
 
@@ -228,7 +228,7 @@ void updatePlayer()
 			moveLEFT();
 			break;
 
-		case KEY_RIGHT:
+		case ARR_RIGHT:
 			moveRIGHT();
 			break;
 		}
@@ -400,9 +400,9 @@ bool isSolid(int pos, int udPOS = 1)
 
 	// Otvaranje fajla ekrana igre u modu za citanje, upisivanje
 	// njegovog sadrzaja u string 'line' i zatvaranje fajla
-	SCREEN_GAME.fileR = openR(SCREEN_GAME.path);
-	string line((istreambuf_iterator<char>(SCREEN_GAME.fileR)), istreambuf_iterator<char>());
-	SCREEN_GAME.fileR.close();
+	screen_game.fileR = openR(screen_game.path);
+	string line((istreambuf_iterator<char>(screen_game.fileR)), istreambuf_iterator<char>());
+	screen_game.fileR.close();
 
 	// U zavisnosti od promenljive za posebne slucajeve (posto je
 	// mapa pravljena tako da u redu svako drugo polje je kruzic
@@ -451,13 +451,13 @@ void moveUP()
 		prev_player_pos = curr_player_pos;
 		curr_player_pos -= 60;
 		last_key_pressed[0] = last_key_pressed[1];
-		last_key_pressed[1] = KEY_UP;
+		last_key_pressed[1] = ARR_UP;
 	}
 	else
 	{
 		if (last_key_pressed[0] == KEY_LEFT)
 			moveLEFT();
-		else if (last_key_pressed[0] == KEY_RIGHT)
+		else if (last_key_pressed[0] == ARR_RIGHT)
 			moveRIGHT();
 	}
 }
@@ -478,13 +478,13 @@ void moveDOWN()
 		prev_player_pos = curr_player_pos;
 		curr_player_pos += 60;
 		last_key_pressed[0] = last_key_pressed[1];
-		last_key_pressed[1] = KEY_DOWN;
+		last_key_pressed[1] = ARR_DOWN;
 	}
 	else
 	{
 		if (last_key_pressed[0] == KEY_LEFT)
 			moveLEFT();
-		else if (last_key_pressed[0] == KEY_RIGHT)
+		else if (last_key_pressed[0] == ARR_RIGHT)
 			moveRIGHT();
 	}
 }
@@ -509,9 +509,9 @@ void moveLEFT()
 	}
 	else
 	{
-		if (last_key_pressed[0] == KEY_UP)
+		if (last_key_pressed[0] == ARR_UP)
 			moveUP();
-		else if (last_key_pressed[0] == KEY_DOWN)
+		else if (last_key_pressed[0] == ARR_DOWN)
 			moveDOWN();
 	}
 }
@@ -532,13 +532,13 @@ void moveRIGHT()
 		prev_player_pos = curr_player_pos;
 		curr_player_pos += 1;
 		last_key_pressed[0] = last_key_pressed[1];
-		last_key_pressed[1] = KEY_RIGHT;
+		last_key_pressed[1] = ARR_RIGHT;
 	}
 	else
 	{
-		if (last_key_pressed[0] == KEY_UP)
+		if (last_key_pressed[0] == ARR_UP)
 			moveUP();
-		else if (last_key_pressed[0] == KEY_DOWN)
+		else if (last_key_pressed[0] == ARR_DOWN)
 			moveDOWN();
 	}
 }
@@ -612,7 +612,7 @@ void homeScreen()
 {
 	// Funkcija crta zeljeni ekran i u zavisnosti od unosa
 	// korisnika, menja dalji tok programa
-	draw(SCREEN_HOME.path, SCREEN_HOME.crd);
+	draw(screen_home.path, screen_home.crd);
 	char c;
 	// std::cin >> c;
 
@@ -754,7 +754,7 @@ void gameLoop()
 		while (game_is_running)
 		{
 			update();
-			draw(SCREEN_GAME.path, SCREEN_GAME.crd);
+			draw(screen_game.path, screen_game.crd);
 			checkForEndGame();
 			usleep(1000000 / 60);
 			// sleep((int)(10/60));

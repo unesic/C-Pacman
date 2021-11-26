@@ -1,5 +1,4 @@
-Uroš Nešić RT-2417.txt
-game.txt
-lvl.txt
+*/**/game.txt
 /.vscode
-*.exe
+pacman
+/pacman.dSYM

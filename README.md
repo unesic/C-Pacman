@@ -15,7 +15,8 @@ git clone https://github.com/unesic/C-Pacman.git [folder]
 There were some issues with the game running in Visual Studio so until I have that fixed I'd recomend using it the same way as it was built (MinGW compiler) using the following command:
 
 ```
-g++ *.cpp -o pacman.exe
+cd src
+g++ new-main.cpp -std=c++11 -lncurses -I . -o pacman
 ```
 
 ## Built With
@@ -25,7 +26,7 @@ g++ *.cpp -o pacman.exe
 
 ## Authors
 
-* **Uroš Nešić** - *Developer* - [unesic](https://github.com/unesic)
+* **Uroš Nešić** - *Developer* - [unesic](https://unesic.io)
 
 ## License
 
